@@ -33,4 +33,6 @@ result = assertEqual(expected.id, actual.id);
 //Report
 console.log(`Plane is added to airport -> airport contains plane: ${result ? "Passed" : "Failed"}`);
 
+CleanUp();
+
 console.log("\n====================");
