@@ -97,3 +97,6 @@ So that the capacity represents the actual capacity of the airport.
 - [ ] Non-number passed to overrideCapacity() => capacity is not changed
 - [ ] Undefined passed to overrideCapacity() => capacity is not changed
 - [ ] NaN passed to overrideCapacity() => capacity is not changed
+
+## Kanban Board
+![image](../img/Kanban.jpg)
