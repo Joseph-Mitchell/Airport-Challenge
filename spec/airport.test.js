@@ -70,4 +70,22 @@ console.log(`Non-object passed to assignPlane() => Planes array unchanged: ${res
 
 CleanUp();
 
+//? Test 4
+//Arrange
+testAirport = new Airport();
+testPlane;
+
+//Act
+expected = 0;
+testAirport.assignPlane(testPlane);
+actual = testAirport.planes.length;
+
+//Assert
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Undefined passed to assignPlane() => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
