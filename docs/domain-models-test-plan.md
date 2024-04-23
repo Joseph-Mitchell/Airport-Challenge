@@ -72,29 +72,28 @@ So that the capacity represents the actual capacity of the airport.
 ## Test Cases
 
 ### User Story 1
-- Plane assigned to airport -> Plane added to airport array
-- Plane assigned to airport with existing planes -> Existing planes remain in array
-- Non plane type assigned to airport -> Nothing added to airport array
-- null, undefined and NaN assigned to airport -> Nothing added to airport array
+- [ ] Object passed to assignPlane() => Object added to planes
+- [ ] Object without id passed to assignPlane() => Object not added to planes
+- [ ] Non-object passed to assignPlane() => Planes array unchanged
+- [ ] Undefined passed to assignPlane() => Planes array unchanged
 
 ### User Story 2
-- Plane assigned to airport at capacity -> Plane not added to airport array
-- Plane assigned to airport at capacity -> Airport array unchanged
+- [ ] Object passed to assignPlane() when planes.length > capacity => Object not added to planes
 
 ### User Story 3
-- Plane assigned to already assigned airport -> Plane not added to airport array
-- Plane assigned to already assigned airport -> Airport array unchanged
+- [ ] Object passed to assignPlane() when object with same id already in planes => Object not added to planes
   
 ### User Story 4
-- Plane removed from airport -> Plane removed from airport array
-- Plane removed from airport -> Other airport array elements unchanged
-- Non-number type passed -> Airport array unchanged
-- Null, undefined or NaN passed -> Airport array unchanged
+- [ ] Number passed to removePlanes() => Object with matching id removed from planes
+- [ ] Non-number passed to removePlanes() => Planes array unchanged
+- [ ] Undefined passed to removePlanes() => Planes array unchanged
+- [ ] NaN passed to removePlanes() => Planes array unchanged
 
 ### User Story 5
-- Id of non-assigned plane passed -> Airport array unchanged
+- [ ] Number not matching id of any object in planes passed to removePlane() => Planes array unchanged
 
 ### User Story 6
-- Airport capacity amended -> Airport capacity is changed
-- Non-number type passed -> Airport capacity unchanged
-- Null, undefined or NaN passed -> Airport capacity unchanged
+- [ ] Number passed to overrideCapacity() => capacity is changed
+- [ ] Non-number passed to overrideCapacity() => capacity is not changed
+- [ ] Undefined passed to overrideCapacity() => capacity is not changed
+- [ ] NaN passed to overrideCapacity() => capacity is not changed
