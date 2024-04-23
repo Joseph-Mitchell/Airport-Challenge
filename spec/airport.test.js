@@ -129,4 +129,24 @@ console.log(`Object passed to assignPlane() when planes length more than capacit
 
 CleanUp();
 
+//? Test 2
+//Arrange
+testAirport = new Airport();
+testPlane = { id: 0 };
+for (let i = 0; i < 10; i++)
+    testAirport.planes.push(testPlane);
+
+//Act
+expected = testAirport.planes.length;
+testAirport.assignPlane(testPlane);
+actual = testAirport.planes.length;
+
+//Assert
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object passed to assignPlane() when planes length AT capacity => Object not added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
