@@ -88,4 +88,22 @@ console.log(`Undefined passed to assignPlane() => Planes array unchanged: ${resu
 
 CleanUp();
 
+//? Test 5
+//Arrange
+testAirport = new Airport();
+testPlane = { id: 0 };
+
+//Act
+expected = 0;
+testAirport.assignPlane(testPlane);
+actual = testAirport.planes[testAirport.planes.length - 1].id;
+
+//Assert
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object with id 0 passed to assignPlane() => Object added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
