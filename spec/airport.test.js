@@ -112,9 +112,9 @@ console.log("====================\n")
 //? Test 1
 //Arrange
 testAirport = new Airport();
-testPlane = { id: 0 };
+testPlane = { id: 15 };
 for (let i = 0; i < 11; i++)
-    testAirport.planes.push(testPlane);
+    testAirport.assignPlane({ id: i });
 
 //Act
 expected = testAirport.planes.length;
@@ -132,9 +132,9 @@ CleanUp();
 //? Test 2
 //Arrange
 testAirport = new Airport();
-testPlane = { id: 0 };
+testPlane = { id: 15 };
 for (let i = 0; i < 10; i++)
-    testAirport.planes.push(testPlane);
+    testAirport.assignPlane({ id: i });
 
 //Act
 expected = testAirport.planes.length;
@@ -146,6 +146,28 @@ result = assertEqual(expected, actual);
 
 //Report
 console.log(`Object passed to assignPlane() when planes length AT capacity => Object not added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
+console.log("\nUser Story 3");
+console.log("====================\n")
+
+//? Test 1
+//Arrange
+testAirport = new Airport();
+testPlane = { id: 1 };
+testAirport.assignPlane(testPlane);
+
+//Act
+expected = testAirport.planes.length;
+testAirport.assignPlane(testPlane);
+actual = testAirport.planes.length;
+
+//Assert
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object passed to assignPlane() when object with same id already in planes => Object not added to planes: ${result ? "Passed" : "Failed"}`);
 
 CleanUp();
 

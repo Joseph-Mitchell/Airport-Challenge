@@ -3,8 +3,10 @@ export default class Airport {
     capacity = 10;
     
     assignPlane(plane) {
-        if (plane?.id === undefined || this.planes.length >= this.capacity)
-            return;
+        
+        if (this.planes.length >= this.capacity) return;
+        if (plane?.id === undefined) return;
+        if (this.planes.some((p) => p.id === plane.id)) return;
         
         this.planes.push(plane);
     }
