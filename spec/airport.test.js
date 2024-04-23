@@ -34,4 +34,22 @@ console.log(`Object passed to assignPlane() => Object added to planes: ${result 
 
 CleanUp();
 
+//? Test 2
+//Arrange
+testAirport = new Airport();
+testPlane = { };
+
+//Act
+expected = 0;
+testAirport.assignPlane(testPlane);
+actual = testAirport.planes.length;
+
+//Assert
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object without id passed to assignPlane() => Object not added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
