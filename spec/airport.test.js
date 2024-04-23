@@ -2,36 +2,35 @@ import { assertEqual } from "./test-framework.js";
 import Airport from "../src/airport.js";
 
 let expected, actual, result;
-let airport, testPlane;
+let testAirport, testPlane;
 
 function CleanUp() {
     expected = undefined;
     actual = undefined;
     result = undefined;
-    airport = undefined;
+    testAirport = undefined;
     testPlane = undefined;
 }
+
 
 console.log("\nUser Story 1");
 console.log("====================\n")
 
-//? User Story 1 - Test 1
-//* Plane is added to airport -> airport contains plane
-
+//? Test 1
 //Arrange
-airport = new Airport();
+testAirport = new Airport();
 testPlane = { id: 1 };
 
 //Act
-expected = { id: 1 };
-airport.assignPlane(testPlane);
-actual = airport.planes[airport.planes.length - 1];
+expected = 1;
+testAirport.assignPlane(testPlane);
+actual = testAirport.planes[testAirport.planes.length - 1].id;
 
 //Assert
-result = assertEqual(expected.id, actual.id);
+result = assertEqual(expected, actual);
 
 //Report
-console.log(`Plane is added to airport -> airport contains plane: ${result ? "Passed" : "Failed"}`);
+console.log(`Object passed to assignPlane() => Object added to planes: ${result ? "Passed" : "Failed"}`);
 
 CleanUp();
 
