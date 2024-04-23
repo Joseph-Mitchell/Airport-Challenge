@@ -76,9 +76,11 @@ So that the capacity represents the actual capacity of the airport.
 - [ ] Object without id passed to assignPlane() => Object not added to planes
 - [ ] Non-object passed to assignPlane() => Planes array unchanged
 - [ ] Undefined passed to assignPlane() => Planes array unchanged
+- [ ] Object with id 0 passed to assignPlane() => Object added to planes
 
 ### User Story 2
-- [ ] Object passed to assignPlane() when planes.length > capacity => Object not added to planes
+- [ ] Object passed to assignPlane() when planes length more than capacity => Object not added to planes
+- [ ] Object passed to assignPlane() when planes length AT capacity => Object not added to planes
 
 ### User Story 3
 - [ ] Object passed to assignPlane() when object with same id already in planes => Object not added to planes
