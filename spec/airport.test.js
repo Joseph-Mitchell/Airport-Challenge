@@ -106,4 +106,27 @@ console.log(`Object with id 0 passed to assignPlane() => Object added to planes:
 
 CleanUp();
 
+console.log("\nUser Story 2");
+console.log("====================\n")
+
+//? Test 1
+//Arrange
+testAirport = new Airport();
+testPlane = { id: 0 };
+for (let i = 0; i < 11; i++)
+    testAirport.planes.push(testPlane);
+
+//Act
+expected = testAirport.planes.length;
+testAirport.assignPlane(testPlane);
+actual = testAirport.planes.length;
+
+//Assert
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object passed to assignPlane() when planes length more than capacity => Object not added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
