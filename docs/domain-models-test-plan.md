@@ -72,18 +72,18 @@ So that the capacity represents the actual capacity of the airport.
 ## Test Cases
 
 ### User Story 1
-- [ ] Object passed to assignPlane() => Object added to planes
-- [ ] Object without id passed to assignPlane() => Object not added to planes
-- [ ] Non-object passed to assignPlane() => Planes array unchanged
-- [ ] Undefined passed to assignPlane() => Planes array unchanged
-- [ ] Object with id 0 passed to assignPlane() => Object added to planes
+- [x] Object passed to assignPlane() => Object added to planes
+- [x] Object without id passed to assignPlane() => Object not added to planes
+- [x] Non-object passed to assignPlane() => Planes array unchanged
+- [x] Undefined passed to assignPlane() => Planes array unchanged
+- [x] Object with id 0 passed to assignPlane() => Object added to planes
 
 ### User Story 2
-- [ ] Object passed to assignPlane() when planes length more than capacity => Object not added to planes
-- [ ] Object passed to assignPlane() when planes length AT capacity => Object not added to planes
+- [x] Object passed to assignPlane() when planes length more than capacity => Object not added to planes
+- [x] Object passed to assignPlane() when planes length AT capacity => Object not added to planes
 
 ### User Story 3
-- [ ] Object passed to assignPlane() when object with same id already in planes => Object not added to planes
+- [x] Object passed to assignPlane() when object with same id already in planes => Object not added to planes
   
 ### User Story 4
 - [ ] Number passed to removePlanes() => Object with matching id removed from planes
