@@ -22,11 +22,11 @@ testAirport = new Airport();
 testPlane = { id: 1 };
 
 //Act
-expected = 1;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes[testAirport.planes.length - 1].id;
 
 //Assert
+expected = 1;
+actual = testAirport.planes[0].id;
 result = assertEqual(expected, actual);
 
 //Report
@@ -40,11 +40,11 @@ testAirport = new Airport();
 testPlane = { };
 
 //Act
-expected = 0;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes.length;
 
 //Assert
+expected = 0;
+actual = testAirport.planes.length;
 result = assertEqual(expected, actual);
 
 //Report
@@ -58,11 +58,11 @@ testAirport = new Airport();
 testPlane = "";
 
 //Act
-expected = 0;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes.length;
 
 //Assert
+expected = 0;
+actual = testAirport.planes.length;
 result = assertEqual(expected, actual);
 
 //Report
@@ -76,11 +76,11 @@ testAirport = new Airport();
 testPlane;
 
 //Act
-expected = 0;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes.length;
 
 //Assert
+expected = 0;
+actual = testAirport.planes.length;
 result = assertEqual(expected, actual);
 
 //Report
@@ -94,11 +94,11 @@ testAirport = new Airport();
 testPlane = { id: 0 };
 
 //Act
-expected = 0;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes[testAirport.planes.length - 1].id;
 
 //Assert
+expected = 0;
+actual = testAirport.planes[0].id;
 result = assertEqual(expected, actual);
 
 //Report
@@ -113,15 +113,18 @@ console.log("====================\n")
 //Arrange
 testAirport = new Airport();
 testPlane = { id: 15 };
-for (let i = 0; i < 11; i++)
+
+for (let i = 0; i < 10; i++)
     testAirport.assignPlane({ id: i });
 
+testAirport.capacity = 5;
+
 //Act
-expected = testAirport.planes.length;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes.length;
 
 //Assert
+expected = 10;
+actual = testAirport.planes.length;
 result = assertEqual(expected, actual);
 
 //Report
@@ -133,15 +136,16 @@ CleanUp();
 //Arrange
 testAirport = new Airport();
 testPlane = { id: 15 };
+
 for (let i = 0; i < 10; i++)
     testAirport.assignPlane({ id: i });
 
 //Act
-expected = testAirport.planes.length;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes.length;
 
 //Assert
+expected = 10;
+actual = testAirport.planes.length;
 result = assertEqual(expected, actual);
 
 //Report
@@ -159,15 +163,38 @@ testPlane = { id: 1 };
 testAirport.assignPlane(testPlane);
 
 //Act
-expected = testAirport.planes.length;
 testAirport.assignPlane(testPlane);
-actual = testAirport.planes.length;
 
 //Assert
+expected = 1;
+actual = testAirport.planes.length;
 result = assertEqual(expected, actual);
 
 //Report
 console.log(`Object passed to assignPlane() when object with same id already in planes => Object not added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
+console.log("\nUser Story 4");
+console.log("====================\n")
+
+//? Test 1
+//Arrange
+testAirport = new Airport();
+
+for (let i = 0; i < 10; i++)
+    testAirport.assignPlane({ id: i });
+
+//Act
+testAirport.removePlane(5);
+
+//Assert
+expected = false;
+actual = testAirport.planes.some((plane) => plane.id === 5);
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Number passed to removePlanes() => Object with matching id removed from planes: ${result ? "Passed" : "Failed"}`);
 
 CleanUp();
 
