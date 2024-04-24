@@ -198,4 +198,25 @@ console.log(`Number passed to removePlanes() => Object with matching id removed 
 
 CleanUp();
 
+//? Test 2
+//Arrange
+testAirport = new Airport();
+testPlane = "";
+
+for (let i = 0; i < 10; i++)
+    testAirport.assignPlane({ id: i });
+
+//Act
+testAirport.removePlane(testPlane);
+
+//Assert
+expected = 10;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Non-number passed to removePlanes() => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
