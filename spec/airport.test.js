@@ -345,4 +345,22 @@ console.log(`Non-number passed to overrideCapacity() => capacity is not changed:
 
 CleanUp();
 
+//? Test 3
+//Arrange
+testAirport = new Airport();
+testCapacity;
+
+//Act
+testAirport.overrideCapacity(testCapacity);
+
+//Assert
+expected = 10;
+actual = testAirport.capacity;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Undefined passed to overrideCapacity() => capacity is not changed: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
