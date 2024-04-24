@@ -2,7 +2,7 @@ import { assertEqual } from "./test-framework.js";
 import Airport from "../src/airport.js";
 
 let expected, actual, result;
-let testAirport, testPlane;
+let testAirport, testPlane, testId;
 
 function CleanUp() {
     expected = undefined;
@@ -10,11 +10,12 @@ function CleanUp() {
     result = undefined;
     testAirport = undefined;
     testPlane = undefined;
+    testId = undefined;
 }
 
 
 console.log("\nUser Story 1");
-console.log("====================\n")
+console.log("====================\n");
 
 //? Test 1
 //Arrange
@@ -125,7 +126,7 @@ console.log(`Object with id NaN passed to assignPlane() => Object not added to p
 CleanUp();
 
 console.log("\nUser Story 2");
-console.log("====================\n")
+console.log("====================\n");
 
 //? Test 1
 //Arrange
@@ -172,7 +173,7 @@ console.log(`Object passed to assignPlane() when planes length AT capacity => Ob
 CleanUp();
 
 console.log("\nUser Story 3");
-console.log("====================\n")
+console.log("====================\n");
 
 //? Test 1
 //Arrange
@@ -194,17 +195,18 @@ console.log(`Object passed to assignPlane() when object with same id already in 
 CleanUp();
 
 console.log("\nUser Story 4");
-console.log("====================\n")
+console.log("====================\n");
 
 //? Test 1
 //Arrange
 testAirport = new Airport();
+testId = 5;
 
 for (let i = 0; i < 10; i++)
     testAirport.assignPlane({ id: i });
 
 //Act
-testAirport.removePlane(5);
+testAirport.removePlane(testId);
 
 //Assert
 expected = false;
@@ -219,13 +221,13 @@ CleanUp();
 //? Test 2
 //Arrange
 testAirport = new Airport();
-testPlane = "";
+testId = "";
 
 for (let i = 0; i < 10; i++)
     testAirport.assignPlane({ id: i });
 
 //Act
-testAirport.removePlane(testPlane);
+testAirport.removePlane(testId);
 
 //Assert
 expected = 10;
@@ -240,13 +242,13 @@ CleanUp();
 //? Test 3
 //Arrange
 testAirport = new Airport();
-testPlane;
+testId;
 
 for (let i = 0; i < 10; i++)
     testAirport.assignPlane({ id: i });
 
 //Act
-testAirport.removePlane(testPlane);
+testAirport.removePlane(testId);
 
 //Assert
 expected = 10;
@@ -261,13 +263,13 @@ CleanUp();
 //? Test 4
 //Arrange
 testAirport = new Airport();
-testPlane = NaN;
+testId = NaN;
 
 for (let i = 0; i < 10; i++)
     testAirport.assignPlane({ id: i });
 
 //Act
-testAirport.removePlane(testPlane);
+testAirport.removePlane(testId);
 
 //Assert
 expected = 10;
@@ -276,6 +278,30 @@ result = assertEqual(expected, actual);
 
 //Report
 console.log(`Non-number passed to removePlanes() => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
+console.log("\nUser Story 5");
+console.log("====================\n");
+
+//? Test 1
+//Arrange
+testAirport = new Airport();
+testId = 15;
+
+for (let i = 0; i < 10; i++)
+    testAirport.assignPlane({ id: i });
+
+//Act
+testAirport.removePlane(testId);
+
+//Assert
+expected = 10;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Number not matching id of any object in planes passed to removePlane() => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
 
 CleanUp();
 
