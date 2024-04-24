@@ -18,4 +18,8 @@ export default class Airport {
     removePlane(id) {
         this.planes = this.planes.filter((plane) => plane.id !== id);
     }
+    
+    overrideCapacity(capacity) {
+        this.capacity = capacity;
+    }
 }

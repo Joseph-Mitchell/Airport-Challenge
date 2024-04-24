@@ -2,7 +2,7 @@ import { assertEqual } from "./test-framework.js";
 import Airport from "../src/airport.js";
 
 let expected, actual, result;
-let testAirport, testPlane, testId;
+let testAirport, testPlane, testId, testCapacity;
 
 function CleanUp() {
     expected = undefined;
@@ -11,6 +11,7 @@ function CleanUp() {
     testAirport = undefined;
     testPlane = undefined;
     testId = undefined;
+    testCapacity = undefined;
 }
 
 
@@ -302,6 +303,27 @@ result = assertEqual(expected, actual);
 
 //Report
 console.log(`Number not matching id of any object in planes passed to removePlane() => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
+console.log("\nUser Story 6");
+console.log("====================\n");
+
+//? Test 1
+//Arrange
+testAirport = new Airport();
+testCapacity = 15;
+
+//Act
+testAirport.overrideCapacity(testCapacity);
+
+//Assert
+expected = 15;
+actual = testAirport.capacity;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Number passed to overrideCapacity() => capacity is changed: ${result ? "Passed" : "Failed"}`);
 
 CleanUp();
 
