@@ -3,14 +3,12 @@ export default class Airport {
     capacity = 10;
     
     assignPlane(plane) {       
-
-        if (this.planes.length >= this.capacity) return;
-        
         //Test for undefined or NaN
         if (plane?.id === undefined || plane?.id !== plane?.id) return;
-        
+     
         //Cancel if plane with same id already in array
         if (this.planes.some((p) => p.id === plane.id)) return; 
+        if (this.planes.length >= this.capacity) return;
         
         this.planes.push(plane);
     }
@@ -20,6 +18,7 @@ export default class Airport {
     }
     
     overrideCapacity(capacity) {
+        //Test for undefined or NaN
         if (typeof capacity === 'number' && capacity === capacity) this.capacity = capacity;
     }
 }

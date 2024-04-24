@@ -77,7 +77,7 @@ So that the capacity represents the actual capacity of the airport.
 - [x] Non-object passed to assignPlane() => Planes array unchanged
 - [x] Undefined passed to assignPlane() => Planes array unchanged
 - [x] Object with id 0 passed to assignPlane() => Object added to planes
-- [ ] Object with id NaN passed to assignPlane() => Object not added to plane
+- [x] Object with id NaN passed to assignPlane() => Object not added to plane
 
 ### User Story 2
 - [x] Object passed to assignPlane() when planes length more than capacity => Object not added to planes
@@ -93,13 +93,13 @@ So that the capacity represents the actual capacity of the airport.
 - [x] NaN passed to removePlanes() => Planes array unchanged
 
 ### User Story 5
-- [ ] Number not matching id of any object in planes passed to removePlane() => Planes array unchanged
+- [x] Number not matching id of any object in planes passed to removePlane() => Planes array unchanged
 
 ### User Story 6
-- [ ] Number passed to overrideCapacity() => capacity is changed
-- [ ] Non-number passed to overrideCapacity() => capacity is not changed
-- [ ] Undefined passed to overrideCapacity() => capacity is not changed
-- [ ] NaN passed to overrideCapacity() => capacity is not changed
+- [x] Number passed to overrideCapacity() => capacity is changed
+- [x] Non-number passed to overrideCapacity() => capacity is not changed
+- [x] Undefined passed to overrideCapacity() => capacity is not changed
+- [x] NaN passed to overrideCapacity() => capacity is not changed
 
 ## Kanban Board
 ![image](../img/Kanban.jpg)
