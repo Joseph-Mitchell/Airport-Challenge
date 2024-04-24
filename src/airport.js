@@ -20,6 +20,6 @@ export default class Airport {
     }
     
     overrideCapacity(capacity) {
-        this.capacity = capacity;
+        if (typeof capacity === 'number') this.capacity = capacity;
     }
 }
