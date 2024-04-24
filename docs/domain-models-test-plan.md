@@ -77,6 +77,7 @@ So that the capacity represents the actual capacity of the airport.
 - [x] Non-object passed to assignPlane() => Planes array unchanged
 - [x] Undefined passed to assignPlane() => Planes array unchanged
 - [x] Object with id 0 passed to assignPlane() => Object added to planes
+- [ ] Object with id NaN passed to assignPlane() => Object not added to plane
 
 ### User Story 2
 - [x] Object passed to assignPlane() when planes length more than capacity => Object not added to planes
@@ -86,10 +87,10 @@ So that the capacity represents the actual capacity of the airport.
 - [x] Object passed to assignPlane() when object with same id already in planes => Object not added to planes
   
 ### User Story 4
-- [ ] Number passed to removePlanes() => Object with matching id removed from planes
-- [ ] Non-number passed to removePlanes() => Planes array unchanged
-- [ ] Undefined passed to removePlanes() => Planes array unchanged
-- [ ] NaN passed to removePlanes() => Planes array unchanged
+- [x] Number passed to removePlanes() => Object with matching id removed from planes
+- [x] Non-number passed to removePlanes() => Planes array unchanged
+- [x] Undefined passed to removePlanes() => Planes array unchanged
+- [x] NaN passed to removePlanes() => Planes array unchanged
 
 ### User Story 5
 - [ ] Number not matching id of any object in planes passed to removePlane() => Planes array unchanged
