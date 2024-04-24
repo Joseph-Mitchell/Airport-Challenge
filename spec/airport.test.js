@@ -363,4 +363,22 @@ console.log(`Undefined passed to overrideCapacity() => capacity is not changed: 
 
 CleanUp();
 
+//? Test 4
+//Arrange
+testAirport = new Airport();
+testCapacity = NaN;
+
+//Act
+testAirport.overrideCapacity(testCapacity);
+
+//Assert
+expected = 10;
+actual = testAirport.capacity;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`NaN passed to overrideCapacity() => capacity is not changed: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
