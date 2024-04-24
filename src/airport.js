@@ -5,7 +5,9 @@ export default class Airport {
     assignPlane(plane) {       
 
         if (this.planes.length >= this.capacity) return;
-        if (plane?.id === undefined) return;
+        
+        //Test for undefined or NaN
+        if (plane?.id === undefined || plane?.id !== plane?.id) return;
         
         //Cancel if plane with same id already in array
         if (this.planes.some((p) => p.id === plane.id)) return; 

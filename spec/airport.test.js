@@ -106,6 +106,24 @@ console.log(`Object with id 0 passed to assignPlane() => Object added to planes:
 
 CleanUp();
 
+//? Test 6
+//Arrange
+testAirport = new Airport();
+testPlane = { id: NaN };
+
+//Act
+testAirport.assignPlane(testPlane);
+
+//Assert
+expected = 0;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object with id NaN passed to assignPlane() => Object not added to plane: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\nUser Story 2");
 console.log("====================\n")
 
