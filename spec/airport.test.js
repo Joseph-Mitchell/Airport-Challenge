@@ -240,4 +240,25 @@ console.log(`Non-number passed to removePlanes() => Planes array unchanged: ${re
 
 CleanUp();
 
+//? Test 4
+//Arrange
+testAirport = new Airport();
+testPlane = NaN;
+
+for (let i = 0; i < 10; i++)
+    testAirport.assignPlane({ id: i });
+
+//Act
+testAirport.removePlane(testPlane);
+
+//Assert
+expected = 10;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Non-number passed to removePlanes() => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
