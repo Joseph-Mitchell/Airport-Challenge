@@ -18,7 +18,7 @@ function CleanUp() {
 console.log("\nUser Story 1");
 console.log("====================\n");
 
-//? Test 1
+//? Test 1 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = { id: 1 };
@@ -36,7 +36,7 @@ console.log(`Object passed to assignPlane() => Object added to planes: ${result 
 
 CleanUp();
 
-//? Test 2
+//? Test 2 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = { };
@@ -54,7 +54,7 @@ console.log(`Object without id passed to assignPlane() => Object not added to pl
 
 CleanUp();
 
-//? Test 3
+//? Test 3 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = "";
@@ -72,7 +72,7 @@ console.log(`Non-object passed to assignPlane() => Planes array unchanged: ${res
 
 CleanUp();
 
-//? Test 4
+//? Test 4 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane;
@@ -90,7 +90,7 @@ console.log(`Undefined passed to assignPlane() => Planes array unchanged: ${resu
 
 CleanUp();
 
-//? Test 5
+//? Test 5 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = { id: 0 };
@@ -108,7 +108,7 @@ console.log(`Object with id 0 passed to assignPlane() => Object added to planes:
 
 CleanUp();
 
-//? Test 6
+//? Test 6 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = { id: NaN };
@@ -129,7 +129,7 @@ CleanUp();
 console.log("\nUser Story 2");
 console.log("====================\n");
 
-//? Test 1
+//? Test 1 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = { id: 15 };
@@ -152,7 +152,7 @@ console.log(`Object passed to assignPlane() when planes length more than capacit
 
 CleanUp();
 
-//? Test 2
+//? Test 2 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = { id: 15 };
@@ -176,7 +176,7 @@ CleanUp();
 console.log("\nUser Story 3");
 console.log("====================\n");
 
-//? Test 1
+//? Test 1 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testPlane = { id: 1 };
@@ -198,7 +198,7 @@ CleanUp();
 console.log("\nUser Story 4");
 console.log("====================\n");
 
-//? Test 1
+//? Test 1 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testId = 5;
@@ -219,7 +219,7 @@ console.log(`Number passed to removePlanes() => Object with matching id removed 
 
 CleanUp();
 
-//? Test 2
+//? Test 2 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testId = "";
@@ -240,7 +240,7 @@ console.log(`Non-number passed to removePlanes() => Planes array unchanged: ${re
 
 CleanUp();
 
-//? Test 3
+//? Test 3 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testId;
@@ -261,7 +261,7 @@ console.log(`Non-number passed to removePlanes() => Planes array unchanged: ${re
 
 CleanUp();
 
-//? Test 4
+//? Test 4 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testId = NaN;
@@ -285,7 +285,7 @@ CleanUp();
 console.log("\nUser Story 5");
 console.log("====================\n");
 
-//? Test 1
+//? Test 1 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testId = 15;
@@ -309,7 +309,7 @@ CleanUp();
 console.log("\nUser Story 6");
 console.log("====================\n");
 
-//? Test 1
+//? Test 1 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testCapacity = 15;
@@ -327,7 +327,7 @@ console.log(`Number passed to overrideCapacity() => capacity is changed: ${resul
 
 CleanUp();
 
-//? Test 2
+//? Test 2 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testCapacity = "15";
@@ -345,7 +345,7 @@ console.log(`Non-number passed to overrideCapacity() => capacity is not changed:
 
 CleanUp();
 
-//? Test 3
+//? Test 3 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testCapacity;
@@ -363,7 +363,7 @@ console.log(`Undefined passed to overrideCapacity() => capacity is not changed: 
 
 CleanUp();
 
-//? Test 4
+//? Test 4 ====================================================================================================
 //Arrange
 testAirport = new Airport();
 testCapacity = NaN;
