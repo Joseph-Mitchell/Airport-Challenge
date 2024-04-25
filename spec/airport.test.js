@@ -403,4 +403,23 @@ console.log(`Object passed to assignPlane() while weather is "stormy" => Object 
 
 CleanUp();
 
+//? Test 2 ====================================================================================================
+//Arrange
+testAirport = new Airport();
+testAirport.weather = "not stormy";
+testPlane = { id: 1 };
+
+//Act
+testAirport.assignPlane(testPlane)
+
+//Assert
+expected = 1;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object passed to assignPlane() while weather is "not stormy" => Object added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
