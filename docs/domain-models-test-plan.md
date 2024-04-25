@@ -32,42 +32,62 @@ As a controller,
 I want to change the capacity of an airport,
 So that the capacity represents the actual capacity of the airport.
 
+### User Story 7
+As a controller,
+I want to be unable to add a plane to an airport who's weather is stormy,
+So that landings are not conducted in dangerous weather.
+
+### User Story 8
+As a controller,
+I want to be unable to remove a plane from an airport who's weather is stormy,
+So that take-offs are not conducted in dangerous weather.
+
 ## Domain Models
 
 ### Domain Model 1
 | Objects | Properties            | Messages            | Output |
 | ------- | --------------------- | ------------------- | ------ |
 | Plane   |                       |                     |        |
-| Airport | planes @Array[@Plane] | assignPlane(@Plane) |        |
+| Airport | planes @Array[@Plane] | assignPlane(@Plane) | @Void  |
 
 ### Domain Model 2
 | Objects | Properties                                | Messages            | Output |
 | ------- | ----------------------------------------- | ------------------- | ------ |
 | Plane   |                                           |                     |        |
-| Airport | planes @Array[@Plane]<br>capacity @Number | assignPlane(@Plane) |        |
+| Airport | planes @Array[@Plane]<br>capacity @Number | assignPlane(@Plane) | @Void  |
 
 ### Domain Model 3
 | Objects | Properties            | Messages            | Output |
 | ------- | --------------------- | ------------------- | ------ |
 | Plane   | id @Number            |                     |        |
-| Airport | planes @Array[@Plane] | assignPlane(@Plane) |        |
+| Airport | planes @Array[@Plane] | assignPlane(@Plane) | @Void  |
 
 ### Domain Model 4
 | Objects | Properties            | Messages             | Output |
 | ------- | --------------------- | -------------------- | ------ |
 | Plane   | id @Number            |                      |        |
-| Airport | planes @Array[@Plane] | removePlane(@Number) |        |
+| Airport | planes @Array[@Plane] | removePlane(@Number) | @Void  |
 
 ### Domain Model 5
 | Objects | Properties            | Messages             | Output |
 | ------- | --------------------- | -------------------- | ------ |
 | Plane   | id @Number            |                      |        |
-| Airport | planes @Array[@Plane] | removePlane(@Number) |        |
+| Airport | planes @Array[@Plane] | removePlane(@Number) | @Void  |
 
 ### Domain Model 6
 | Objects | Properties       | Messages                  | Output |
 | ------- | ---------------- | ------------------------- | ------ |
-| Airport | capacity @Number | overrideCapacity(@Number) |        |
+| Airport | capacity @Number | overrideCapacity(@Number) | @Void  |
+
+### Domain Model 7
+| Objects | Properties      | Messages            | Output |
+| ------- | --------------- | ------------------- | ------ |
+| Airport | weather @String | assignPlane(@Plane) | @Void  |
+
+### Domain Model 8
+| Objects | Properties      | Messages             | Output |
+| ------- | --------------- | -------------------- | ------ |
+| Airport | weather @String | removePlane(@Number) | @Void  |
 
 ## Test Cases
 
@@ -101,5 +121,16 @@ So that the capacity represents the actual capacity of the airport.
 - [x] Undefined passed to overrideCapacity() => capacity is not changed
 - [x] NaN passed to overrideCapacity() => capacity is not changed
 
+### User Story 7
+- [ ] Plane assigned to stormy airport -> Nothing added to airport array
+- [ ] Plane assigned to "not stormy" airport -> Plane added to airport array
+
+### User Story 8
+- [ ] Plane removed from stormy airport -> airport array remains unchanged
+- [ ] Plane removed from "not stormy" airport -> plane removed from airport array
+
 ## Kanban Board
 ![image](../img/Kanban.jpg)
+
+## Generative AI Chat
+![image](../img/gptscreenshot.jpg)
