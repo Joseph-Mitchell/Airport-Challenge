@@ -381,4 +381,26 @@ console.log(`NaN passed to overrideCapacity() => capacity is not changed: ${resu
 
 CleanUp();
 
+console.log("\nUser Story 7");
+console.log("====================\n");
+
+//? Test 1 ====================================================================================================
+//Arrange
+testAirport = new Airport();
+testAirport.weather = "stormy";
+testPlane = { id: 1 };
+
+//Act
+testAirport.assignPlane(testPlane)
+
+//Assert
+expected = 0;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`Object passed to assignPlane() while weather is "stormy" => Object not added to planes: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
