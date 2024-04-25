@@ -2,7 +2,7 @@
 
 ## Problem
 
-The main issue to be addressed is the time needed to communicate information, including time to obtain or change information on an existing central system.
+The main issue to be addressed is the time needed to communicate information - including time to obtain or change information - on an existing central system.
 
 This is an issue for two core reasons:
 
@@ -14,7 +14,7 @@ The program solves this issue by providing a centralized representation of the a
 ## Benefits
 
 - Less time will be spent communicating information. This avoids incidents caused by delay in operation or operations conducted using out of date information, as well as allowing more operations to be made in a given time frame.
-- Operations can be conducted using the system, rather than manually updating a central system. This decreases time and work needed to conduct these operations, further decreasing the time spent to conduct operations.
+- The system is simple and quick to update, in comparison to a non-computerised central system. This decreases time and work spent on basic tasks, further decreasing the time needed to conduct operations.
 - Incorrect operations (e.g. attempting to land a plane when the airport is full) are stopped by the program. This allows mistakes to be avoided automatically, increasing safety and avoiding extra time being spent to fix mistakes.
 
 ## Risks

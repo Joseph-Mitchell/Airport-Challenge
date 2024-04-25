@@ -61,7 +61,7 @@ airport.removePlane(plane.id);
 console.log("After attempting: " + JSON.stringify(airport.planes));
 
 //User Story 5 ===========================================================================
-console.log("\nCannot remove a plane from an airport without specified plane");
+console.log("\nCannot remove a plane from an airport not containing the plane");
 console.log("==============================");
 
 airport.planes = [{ id: 0 }];
