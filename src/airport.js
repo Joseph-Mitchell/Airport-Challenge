@@ -17,6 +17,8 @@ export default class Airport {
     }
     
     removePlane(id) {
+        if (this.weather === "stormy") return; 
+        
         this.planes = this.planes.filter((plane) => plane.id !== id);
     }
     

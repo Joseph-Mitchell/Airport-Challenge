@@ -422,4 +422,28 @@ console.log(`Object passed to assignPlane() while weather is "not stormy" => Obj
 
 CleanUp();
 
+console.log("\nUser Story 8");
+console.log("====================\n");
+
+//? Test 1 ====================================================================================================
+//Arrange
+testAirport = new Airport();
+testPlane = { id: 1 };
+testAirport.assignPlane(testPlane);
+testAirport.weather = "stormy";
+testId = 1;
+
+//Act
+testAirport.removePlane(testId)
+
+//Assert
+expected = 1;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`removePlane() called while weather is "stormy" => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
