@@ -446,4 +446,25 @@ console.log(`removePlane() called while weather is "stormy" => Planes array unch
 
 CleanUp();
 
+//? Test 2 ====================================================================================================
+//Arrange
+testAirport = new Airport();
+testPlane = { id: 1 };
+testAirport.assignPlane(testPlane);
+testAirport.weather = "not stormy";
+testId = 1;
+
+//Act
+testAirport.removePlane(testId)
+
+//Assert
+expected = 0;
+actual = testAirport.planes.length;
+result = assertEqual(expected, actual);
+
+//Report
+console.log(`removePlane() called while weather is "stormy" => Planes array unchanged: ${result ? "Passed" : "Failed"}`);
+
+CleanUp();
+
 console.log("\n====================");
